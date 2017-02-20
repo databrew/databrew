@@ -67,20 +67,42 @@ library(package_name)
 # "actions" and data rather than logic. 
 
 # Create and object with '=' and '<-'
-object <- 2+2
-object
+object_1 <- 2+2
+object_1
 
 object_2 <- 3+3
 object_2
 
 # Objects can interact with each other 
+object_1 + object_2
+
+# concatenating numbers (and overwrite objects)
+object_1 <- c(1,3,5,7,9,11)
+object_2 <- c(2,4,6,8,10,10)
+
+# add them together
 object + object_2
 
-# Values in object can be overridden
-object <- 15
+# print the 2nd element in each object
+object_1[2]
+object_2[2]
+
+# print the 1-3 elements 
+object_1[1:3]
+object_2[1:3]
+
+# add together the 3rd and 5th element
+object[3] + object[5]
+
 
 # Objects and store "string"s too
 string_object <- 'hello'
+
+# concatenating strings
+string_object <- c('hello', 'how are you')
+
+# get the 2nd element
+string_object[2]
 
 ###
 # saving objects 
@@ -94,27 +116,6 @@ saveRDS(object_2, 'object_2.rda')
 ##########
 # SESSION 2 - READING AND EXPLORING DATA (kaggle.com/datasets)
 ##########
-
-####
-# reading data from your local computer
-
-# identify our working directory
-getwd()
-
-# our data is not in that path - we need to change our working directory to the 'data' folder
-setwd('/home/benbrew/Documents/databrew/R/intro_to_R/data')
-
-# read in data using read.csv
-dat <- read.csv('college_all_ages.csv')
-
-# read in .txt file 
-dat <- read.table('college_all_ages.txt')
-
-# need to tell R how the values are seperated
-dat <- read.table('college_all_ages.txt', sep = ',')
-
-# need to tell R to add a header
-dat <- read.table('college_all_ages.txt', sep = ',', header = TRUE)
 
 ####
 # getting data from an R package
@@ -134,20 +135,63 @@ dat <- college_all_ages
 # link to data description
 # https://github.com/fivethirtyeight/data/tree/master/college-majors
 
+####
+# reading data from your local computer
+
+# identify our working directory
+getwd()
+
+# our data is not in that path - we need to change our working directory to the 'data' folder
+setwd('/home/benbrew/Documents/databrew/R/intro_to_R/data')
+# read in .txt file 
+dat <- read.table('college_all_ages.txt')
+
+# need to tell R how the values are seperated
+dat <- read.table('college_all_ages.txt', sep = ',')
+
+# need to tell R to add a header
+dat <- read.table('college_all_ages.txt', sep = ',', header = TRUE, stringsAsFactors = FALSE)
+
+# read in data using read.csv
+dat <- read.csv('college_all_ages.csv', stringsAsFactors = F)
+
+
 ###
-# data types - numeric, character, factor
+# structure of data and data types - numeric, character, factor
+str(dat)
 
-# structure of data
+# Integers cannot take decimal or fractional values, while numerics can, but no real practical difference.
+summary(dat)
+summary(dat$Employed)
 
-# changing data types 
+# Factors have predetermined levels, whereas characters are simply strings. R will treat them the same 
+# when doing most statistical anlaysis, but they are entirely different when manipulating data frames.
+summary(dat$Major_category)
 
+# changing from character to factor
+dat$Major_category <- as.factor(dat$Major_category)
+# for numeric: as.numeric
+# for character: as.character
+
+# now doing a summary of that column will give us a more useful answer
+summary(dat$Major_category)
 
 ###
 # basic R functions for exploring data 
 
 # dims, ncol, nrow
+dim(dat)
+ncol(dat)
+nrow(dat)
+length(dat$Employed)
 
 # towlower, colnames, names
+colnames(dat)
+
+# print 5th column
+colnames(dat)[5]
+
+# print 2nd columnd
 
 # max, min, mean 
 

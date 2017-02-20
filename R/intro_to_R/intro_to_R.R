@@ -151,10 +151,35 @@ dat <- college_all_ages
 
 # max, min, mean 
 
-### 
-# subsetting data
+### apply
 
 ### 
 # conditional statements 
+
+### 
+# subsetting data
+
+
+##########
+# SESSION 3: MANIPULATING DATA
+##########
+
+# splite, apply, combine
+
+# dplyr
+
+# writing data
+
+##########
+# SESSION 4: VISUALIZING DATA
+##########
+install.packages('ggplot2')
+library(ggplot2)
+
+##########
+# SESSION 5: STATISTUCAL ANALYSIS
+##########
+
+
 
 

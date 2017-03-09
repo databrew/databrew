@@ -1,10 +1,10 @@
 
-# This script will be used to navigate through out introduction to R course. 
+# This script will be used to navigate through out introduction to R course.
 
 # Course Instructor: Ben Brew
 
-# Course Outline: 
-# Session 1: Getting familiar with RStudio (90 minutes) 
+# Course Outline:
+# Session 1: Getting familiar with RStudio (90 minutes)
 # Useful packages (installation and accessing library)
 # R Studio environment
 # How to talk with R
@@ -24,7 +24,7 @@
 # ggplot2
 # Session 5: Statistical Analysis (90)
 # (Generalized) Linear model (LM, GLM)
-# T test 
+# T test
 # predict
 
 
@@ -34,11 +34,11 @@
 
 
 ###
-# R is an open source software with access to thousand of user made packages and libraries 
+# R is an open source software with access to thousand of user made packages and libraries
 
-# installing a package from the console 
+# installing a package from the console
 
-# only once 
+# only once
 install.packages('package_name')
 
 # at the beginning of any script that uses functions from this package
@@ -46,11 +46,11 @@ library(package_name)
 
 # packages we will use today
 # ggplot2
-# dplyr 
+# dplyr
 # reshape2
 
 ##########
-# R studio environment 
+# R studio environment
 ##########
 # running code from script: ctrl + enter, highlight + enter
 # running code from console: enter
@@ -69,8 +69,8 @@ library(package_name)
 # R is an object oriented programming language
 ##########
 
-# Object-oriented programming (OOP) is a programming language model organized around objects rather than 
-# "actions" and data rather than logic. 
+# Object-oriented programming (OOP) is a programming language model organized around objects rather than
+# "actions" and data rather than logic.
 
 # Create and object with '=' and '<-'
 a <- 2+2
@@ -79,10 +79,10 @@ a
 b <- 3+3
 b
 
-# Objects can interact with each other 
+# Objects can interact with each other
 a + b
 
-# concatenating numbers 
+# concatenating numbers
 a <- c(1,3,5,7,9,11)
 b <- c(2,4,6,8,10,10)
 
@@ -93,19 +93,19 @@ a + b
 a[2]
 b[2]
 
-# print the 1-4 elements 
+# print the 1-4 elements
 a[1:4]
 b[1:4]
 
 # add together the 3rd and 5th element
 a[3] + b[5]
 
-# communicating with R 
+# communicating with R
 
 # Objects and store "string"s too
 d <- 'hello'
 
-# same as 
+# same as
 d = 'hello'
 
 # concatenating strings
@@ -151,10 +151,10 @@ a <= 4
 # saving objects
 ##########
 
-# as an R data image 
+# as an R data image
 save.image('my_first_objects.RData')
 
-# as an rda file 
+# as an rda file
 saveRDS(object_2, 'object_2.rda')
 
 
@@ -172,7 +172,7 @@ a <- c(10, 22, 54, 4, 5, 21, 7, 19)
 
 # add the 2 and 5 element of a
 
-# create a new object called 'b' and fill it with 
+# create a new object called 'b' and fill it with
 
 # replace the the 6th element of a with 8 new numbers
 
@@ -195,7 +195,7 @@ a <- c(10, 22, 54, 4, 5, 21, 7, 19)
 # getting data from an R package
 ###########
 
-# type following line into console (only once) 
+# type following line into console (only once)
 # install.packages('fivethirtyeight')
 
 # acces library (run this line everytime you open R studio)
@@ -227,7 +227,7 @@ dat <- read.table('college_all_ages.txt')
 # because the data is seperated by ',' we need to add that argument to the function
 dat <- read.table('college_all_ages.txt', sep = ',')
 
-# need to tell R to add a header and to 
+# need to tell R to add a header and to
 dat <- read.table('college_all_ages.txt', sep = ',', header = TRUE)
 
 # read in data using read.csv
@@ -245,7 +245,7 @@ summary(dat)
 # we can look at individual columns using the '$' operator or by selecting the position of the column
 summary(dat$Employed)
 
-# Factors have predetermined levels, whereas characters are simply strings. R will treat them the same 
+# Factors have predetermined levels, whereas characters are simply strings. R will treat them the same
 # when doing most statistical anlaysis, but they are entirely different when manipulating data frames.
 summary(dat$Major_category)
 # R doesnt know how to summarize a string variable
@@ -259,7 +259,7 @@ dat$Major_category <- as.factor(dat$Major_category)
 summary(dat$Major_category)
 
 ##########
-# basic R functions for exploring data 
+# basic R functions for exploring data
 ##########
 
 # dims, ncol, nrow
@@ -285,20 +285,20 @@ mean(dat$Unemployment_rate)
 
 # print the name of the 3rd column
 
-# what is the mean of the column "Total" 
+# what is the mean of the column "Total"
 
 # Get a summary of the "Major_category" column (hint: you need to convert it to a factor variable)
 
-# subtract "Employed" column from "Total" column 
+# subtract "Employed" column from "Total" column
 
-# now assign that subtraction vector to a new column 
+# now assign that subtraction vector to a new column
 
 ###############################################################################################################
 
 # SESSION 3: MANIPULATING DATA
 
 #########
-# make the column names 
+# make the column names
 #########
 
 # first you need to acces the column names with the colnames function
@@ -310,12 +310,12 @@ tolower(colnames(dat))
 # we can also make them all upper case with the toupper functio
 toupper(colnames(dat))
 
-# but if we want to actually change our column names to lower case we have to overwrite the our 
+# but if we want to actually change our column names to lower case we have to overwrite the our
 # existing column names.
 colnames(dat) <- tolower(colnames(dat))
 
 ##########
-# conditional statements 
+# conditional statements
 ##########
 
 # we can use vectorized conditional statements to recode variabes or create new ones based off old ones
@@ -327,8 +327,8 @@ summary(dat$unemployment_rate)
 # We can also visualize the distribution with a histogram
 hist(dat$unemployment_rate)
 
-# We will create a new variable that is categorical, not numeric. 
-# If the number is over 0.05, we will classify it as "high_unemployment" and else it will be classified 
+# We will create a new variable that is categorical, not numeric.
+# If the number is over 0.05, we will classify it as "high_unemployment" and else it will be classified
 # as "low_employment. WE can do this using the ifesle statment
 ?ifelse
 
@@ -339,9 +339,9 @@ summary(as.factor(dat$new_var))
 
 ###
 # round numeric data
-# as of now, the data is represented with too many decimal points. lets round it to the nearest 10th with the round 
+# as of now, the data is represented with too many decimal points. lets round it to the nearest 10th with the round
 # function
-round(dat$unemployment_rate, 3) 
+round(dat$unemployment_rate, 3)
 
 # this is what we want, not lets override that column withe our new rounded values
 dat$unemployment_rate <- round(dat$unemployment_rate,3)
@@ -353,9 +353,9 @@ dat$unemployment_rate <- dat$unemployment_rate*100
 # subsetting data
 ##########
 
-# In R we use parentheses () for functions and brackets [] for subsetting. 
-# to subset data, we simply write the object followed by brackets, and then indicate 
-# which row or column we would like to select. Rows are positioned on the left hand side of the 
+# In R we use parentheses () for functions and brackets [] for subsetting.
+# to subset data, we simply write the object followed by brackets, and then indicate
+# which row or column we would like to select. Rows are positioned on the left hand side of the
 # comman and columns on the right hand side
 
 # for example, if we want to select the 3rd row and the 2nd column we simply write
@@ -363,7 +363,7 @@ dat[3,2]
 
 # If we want to select one specific column, but all of the rows simply leave the left side of the comma blank
 dat[,5]
-# this is the same as 
+# this is the same as
 dat$employed
 
 # Simlarly, if we want to select one row but all of the columns simply leave the right side of the comma blank
@@ -380,11 +380,11 @@ dat[dat$new_var == 'low_unemployment',]
 # we can assign this to a new data frame, called dat_low
 dat_low <- dat[dat$new_var == 'low_unemployment',]
 
-# lest break down what we just did 
+# lest break down what we just did
 dat$new_var == 'low_unemployment'
-# this returns a vector of TRUE and FALSES 
+# this returns a vector of TRUE and FALSES
 # when put inside of the [] it keeps only the rows for which there is a TRUE value.
-# and because the right hand side of the comma is empty, we grab all of the columns. 
+# and because the right hand side of the comma is empty, we grab all of the columns.
 
 ##########
 # subsetting by columns
@@ -406,24 +406,59 @@ dat[, c('major_code', 'major', 'major_category', 'total', 'p25th')]
 
 
 ##########
-# gsub, strsplit, grepl
+# gsub
 ##########
+
+# summary
 ?gsub
+summary(as.factor(dat$major))
 
+# make lower case
+dat$major <- tolower(dat$major)
 
+dat$major <- gsub("information science", "computer sciences", dat$major)
+
+#########
+# grepl - pattern matching
+#########
+?grepl
+
+# if we wanted to subset the data and get the rows where major contains the word "sciences"
+grepl('sciences', dat$major)
+dat_sci <- dat[grepl('sciences', dat$major),]
+
+##########
 # dplyr
+##########
+install.packages('dplyr')
+library(dplyr)
 
+# group_by()
+
+# filter()
+
+# arrange()
+
+# select()
+
+# mutate()
+
+
+
+
+##########
 # writing data
+##########
 
-##########
+#######################################################################################################
 # SESSION 4: VISUALIZING DATA
-##########
 install.packages('ggplot2')
 library(ggplot2)
 
-##########
+
+
+########################################################################################################
 # SESSION 5: STATISTUCAL ANALYSIS
-##########
 
 
 

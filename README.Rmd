@@ -1,0 +1,27 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# databrew: The R package of databrew
+
+## Installation
+
+
+```r
+if(!require(devtools)) install.packages("devtools")
+install_github('databrew/databrew')
+```
+
+## Details
+
+Read the [vignette](github.com/databrew/databrew/blob/master/vignettes/vignette.html) for full details.

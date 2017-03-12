@@ -1,34 +1,55 @@
 #' Install packages
 #'
 #' Install some subjectively useful packages
+#' @param re_install Whether to re-install already installed packages (
+#' default = FALSE)
+#' @return Nothing, but packages will be installed
+#' @import data.table
+#' @import devtools
+#' @import ggmap
+#' @import ggthemes
+#' @import knitr
+#' @import leaflet
+#' @import maptools
+#' @import raster
+#' @import RColorBrewer
+#' @import rgdal
+#' @import rgeos
+#' @import rmarkdown
+#' @import sp
+#' @import tidyr
+#' @import tidyverse
+#' @import tufte
 #' @export
 
-install_packages <- function(){
-  
+install_packages <- function(re_install = FALSE){
+
   # Define packages
-  pkgs <- c('tidyverse',
-            'raster',
-            'rgdal',
-            'sp',
-            'maptools',
-            'rgeos',
-            'ggmap',
-            'tidyr',
-            'RColorBrewer',
-            'rmarkdown',
-            'tufte',
-            'data.table',
+  pkgs <- c('data.table',
             'devtools',
-            'leaflet',
+            'ggmap',
             'ggthemes',
-            'knitr')
-  
+            'knitr',
+            'leaflet',
+            'maptools',
+            'raster',
+            'RColorBrewer',
+            'rgdal',
+            'rgeos',
+            'rmarkdown',
+            'sp',
+            'tidyr',
+            'tidyverse',
+            'tufte')
+
   # Only install those which don't already have
-  pkgs <- pkgs[!(pkgs %in% installed.packages()[,"Package"])]
-  
+  if(!re_install){
+    pkgs <- pkgs[!(pkgs %in% installed.packages()[,"Package"])]
+  }
+
   # Alphabetize
   pkgs <- sort(pkgs)
-  
+
   if(length(pkgs) == 0){
     message('All packages already installed. No action being taken.')
   } else {

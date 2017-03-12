@@ -14,4 +14,4 @@ install_github('databrew/databrew')
 Details
 -------
 
-Read the [vignette](github.com/databrew/databrew/blob/master/vignettes/vignette.html) for full details.
+Read the [vignette](https://htmlpreview.github.io/?https://github.com/databrew/databrew/blob/master/vignettes/vignette.html) for full details.

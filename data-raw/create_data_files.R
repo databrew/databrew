@@ -13,7 +13,7 @@ df <- location_history %>%
     date_day = as.Date(date_precise)
   ) 
 
-# Save data
+# Save data as "joe" for package inclusion
 joe <- df
 # Remove list columns and other useless columns
 joe <- joe %>%
@@ -27,9 +27,32 @@ joe <- joe %>%
                 accuracy) %>%
   rename(date = date_day,
          time = date_precise)
+
+# Remove airplane obs
+joe <- joe %>%
+  mutate(remove = 
+           date == '2017-02-27' &
+           time > '2017-02-27 15:00:00')
+  
+
 devtools::use_data(joe,
                    overwrite = TRUE)
 
+
+# # Plot day
+# plot_day <- function(sub_data){
+#   require(maps)
+#   map('world')
+#   points(sub_data$longitude,
+#          sub_data$latitude,
+#          col = 'red')
+# }
+# 
+# sub_data <-  joe %>%
+#   filter(date == '2017-02-27',
+#          time <= '2017-02-27 15:00:00')
+# plot_day(sub_data =  sub_data)
+# plot_day(day = '2017-03-02')
 
 # library("ggmap")
 # maptile <- get_map(location=c(lon=((max(df$longitude) + min(df$longitude)) / 2),

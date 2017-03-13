@@ -41,6 +41,18 @@ devtools::use_data(joe,
                    overwrite = TRUE)
 
 
+
+plot_day <- function(day){
+  require(sp)
+  require(mapview)
+  sub_data <- joe %>%
+    filter(date == day)
+  sub_data <- data.frame(sub_data)
+  coordinates(sub_data) <- ~longitude+latitude
+  mapview::mapview(sub_data)
+}
+plot_day(Sys.Date())
+
 # # Plot day
 # plot_day <- function(sub_data){
 #   require(maps)

@@ -32,7 +32,9 @@ joe <- joe %>%
 joe <- joe %>%
   mutate(remove = 
            date == '2017-02-27' &
-           time > '2017-02-27 15:00:00')
+           time > '2017-02-27 15:00:00') %>%
+  filter(!remove) %>%
+  dplyr::select(-remove)
   
 
 devtools::use_data(joe,

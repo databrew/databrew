@@ -6,6 +6,7 @@
 #' @return Nothing, but packages will be installed
 #' @import data.table
 #' @import devtools
+#' @import gsheet
 #' @import ggmap
 #' @import ggthemes
 #' @import knitr
@@ -29,6 +30,7 @@ install_packages <- function(re_install = FALSE){
             'devtools',
             'ggmap',
             'ggthemes',
+            'gsheet',
             'knitr',
             'leaflet',
             'maptools',

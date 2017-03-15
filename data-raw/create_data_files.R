@@ -40,18 +40,50 @@ joe <- joe %>%
 devtools::use_data(joe,
                    overwrite = TRUE)
 
+# Create chicken data
+# http://koaning.io/fun-datasets.html
+frangos <- readr::read_csv('chickweight.csv')
+frangos$rownum <- NULL
+# Jitter time
+frangos$Time <- jitter(frangos$Time, factor = 5)
+frangos$Time <- ifelse(frangos$Time <0, 0, frangos$Time)
 
+# Lowercase the names
+names(frangos) <- tolower(names(frangos))
 
-plot_day <- function(day){
-  require(sp)
-  require(mapview)
-  sub_data <- joe %>%
-    filter(date == day)
-  sub_data <- data.frame(sub_data)
-  coordinates(sub_data) <- ~longitude+latitude
-  mapview::mapview(sub_data)
-}
-plot_day(Sys.Date())
+# Order columns
+frangos <- frangos %>%
+  dplyr::select(diet,
+                chick,
+                time, 
+                weight) %>%
+  arrange(diet, chick, time)
+
+# Create a different diet
+frangos <- frangos %>%
+  mutate(diet = ifelse(diet == 1, 'corn',
+                       ifelse(diet == 2, 'trash',
+                              ifelse(diet == 3, 'mixed',
+                                     ifelse(diet == 4, 'special', NA)))))
+
+# Rename time and grams
+frangos <- frangos %>%
+  rename(days = time,
+         grams = weight)
+
+devtools::use_data(frangos,
+                   overwrite = TRUE)
+
+# plot_day <- function(day){
+#   require(sp)
+#   require(mapview)
+#   sub_data <- joe %>%
+#     filter(date == day)
+#   sub_data <- data.frame(sub_data)
+#   coordinates(sub_data) <- ~longitude+latitude
+#   mapview::mapview(sub_data)
+# }
+# plot_day(Sys.Date())
 
 # # Plot day
 # plot_day <- function(sub_data){

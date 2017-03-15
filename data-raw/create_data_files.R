@@ -74,6 +74,13 @@ frangos <- frangos %>%
 devtools::use_data(frangos,
                    overwrite = TRUE)
 
+# # Read fake census data (not reproducible)
+# census <- readr::read_csv('/home/joebrew/Documents/databrew.github.io/census.csv')
+# 
+# devtools::use_data(census,
+#                    overwrite = TRUE)
+
+
 # plot_day <- function(day){
 #   require(sp)
 #   require(mapview)

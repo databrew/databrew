@@ -1,11 +1,11 @@
 Package: databrew
-Title: What the Package Does (one line, title case)
+Title: The databrew R package
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: person("Joe", "Brew", email = "joebrew@gmail.com", role = c("aut", "cre"))
+Description: Miscellaneous data and tools for learning R.
 Depends:
-    R (>= 3.3.1)
-License: What license is it under?
+    R (>= 3.1.0)
+License: CreativeCommons
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1.9000

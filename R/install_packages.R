@@ -6,6 +6,7 @@
 #' @return Nothing, but packages will be installed
 #' @import data.table
 #' @import devtools
+#' @import extrafont
 #' @import gsheet
 #' @import ggmap
 #' @import ggthemes
@@ -18,6 +19,7 @@
 #' @import rgeos
 #' @import rmarkdown
 #' @import sp
+#' @import stringdist
 #' @import tidyr
 #' @import tidyverse
 #' @import tufte
@@ -28,6 +30,7 @@ install_packages <- function(re_install = FALSE){
   # Define packages
   pkgs <- c('data.table',
             'devtools',
+            'extrafont',
             'ggmap',
             'ggthemes',
             'gsheet',
@@ -40,6 +43,7 @@ install_packages <- function(re_install = FALSE){
             'rgeos',
             'rmarkdown',
             'sp',
+            'stringdist',
             'tidyr',
             'tidyverse',
             'tufte')

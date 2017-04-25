@@ -19,4 +19,3 @@ A map
 \description{
 Visualize location of a dataframe with lat/lon columns
 }
-

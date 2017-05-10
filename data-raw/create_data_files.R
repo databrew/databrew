@@ -35,8 +35,11 @@ joe <- joe %>%
            time > '2017-02-27 15:00:00') %>%
   filter(!remove) %>%
   dplyr::select(-remove)
-  
 
+# Remove pre 2017 obs
+joe <- joe %>%
+  filter(date >= '2017-01-01')
+  
 devtools::use_data(joe,
                    overwrite = TRUE)
 
@@ -72,6 +75,12 @@ frangos <- frangos %>%
          grams = weight)
 
 devtools::use_data(frangos,
+                   overwrite = TRUE)
+
+# Create sentiment scoring data
+library(gsheet)
+af <- gsheet2tbl('https://docs.google.com/spreadsheets/d/1YNIGN61kf7mTXcJpwvucwjSJt1mD6ne1_TDy6d8-eXA/edit?usp=sharing')
+devtools::use_data(af,
                    overwrite = TRUE)
 
 # # Read fake census data (not reproducible)

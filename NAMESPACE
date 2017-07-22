@@ -3,6 +3,7 @@
 export(install_packages)
 export(prepare_for_word_cloud)
 export(score_sentiment)
+export(theme_databrew)
 export(visualize_location)
 import(RColorBrewer)
 import(data.table)

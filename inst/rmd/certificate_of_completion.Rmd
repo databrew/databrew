@@ -1,0 +1,82 @@
+---
+title: "Certificate of Completion"
+author: "Introduction to R"
+header-includes: 
+   \usepackage{fancyhdr}
+output:
+  pdf_document:
+    fig_caption: false
+params:
+  name: NAME GOES HERE
+classoption: landscape, a5paper
+---
+
+\pagenumbering{gobble}
+
+\addtolength{\headheight}{1.0cm}
+\pagestyle{fancyplain} 
+
+\rhead{\begin{center}\includegraphics[height=1cm]{logo.png}\\ \href{http://databrew.cc}{www.databrew.cc}\end{center}} 
+
+\renewcommand{\headrulewidth}{0pt} 
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE, comment = NA, error= FALSE, cache = F}
+
+# No scientific notation
+options(scipen=999)
+
+# Packages 
+library(databrew)
+library(stringr)
+library(cism)
+
+# Basic knitr options
+knitr::opts_chunk$set(comment = NA, 
+               echo = FALSE, 
+               eval = TRUE,
+               warning = FALSE, 
+               message = FALSE, 
+               error = TRUE, 
+               cache = FALSE)
+```
+
+\begin{center}
+\begin{Large}
+
+This certificates acknowledges that 
+
+\vspace{2mm}
+
+\end{Large}
+
+\begin{Huge}
+
+```{r, results = 'asis'}
+cat(toupper(params$name))
+```
+
+\end{Huge}
+
+
+\vspace{2mm}
+
+\begin{Large}
+
+Successfully completed all of the requirements of the "Introduction to R" course at the Manhiça Health Research Centre (Centro de Investigação em Saude de Manhiça) from March to May, 2017. 
+
+\end{Large}
+
+\vfill
+
+\end{center}
+
+
+\begin{large}
+This course consisted of 12 hours of in-person instruction, in addition to approximately 24 hours of assignments. Having completed this course, the aforementioned individual has a clear grasp of the fundamentals of data reading, processing, cleaning, and visualization in R, using an assortment of packages and techniques. For validation or questions, please contact \href{mailto:info@databrew.cc}{info@databrew.cc}.
+\end{large}
+
+\begin{flushright}
+\begin{small}
+Unique certificate identification number: `r paste0(paste0(sample(letters, 4), collapse = '.'), sample(865732:213041902, 1), sample(letters, 1), collapse = '')`.
+\end{small}
+\end{flushright}

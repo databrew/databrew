@@ -12,3 +12,4 @@ score_sentiment(x)
 \description{
 Score the positivity / negativity of a statement
 }
+

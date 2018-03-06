@@ -4,20 +4,20 @@ library(dplyr)
 # Create location history
 # https://takeout.google.com/settings/takeout
 library(jsonlite)
-location_history <- jsonlite::fromJSON(txt = 'LocationHistory.json')$locations
+location_history <- jsonlite::fromJSON(txt = 'Location History.json')$locations
 df <- location_history %>%
   mutate(
     longitude = longitudeE7 * 10^-7,
     latitude = latitudeE7 * 10^-7,
     date_precise = as.POSIXct(as.numeric(timestampMs)/1000, origin="1970-01-01", tz="UTC"),
     date_day = as.Date(date_precise)
-  ) 
+  )
 
 # Save data as "joe" for package inclusion
 joe <- df
 # Remove list columns and other useless columns
 joe <- joe %>%
-  dplyr::select(date_day, 
+  dplyr::select(date_day,
                 date_precise,
                 longitude,
                 latitude,
@@ -30,7 +30,7 @@ joe <- joe %>%
 
 # Remove airplane obs
 joe <- joe %>%
-  mutate(remove = 
+  mutate(remove =
            date == '2017-02-27' &
            time > '2017-02-27 15:00:00') %>%
   filter(!remove) %>%
@@ -39,7 +39,7 @@ joe <- joe %>%
 # Remove pre 2017 obs
 joe <- joe %>%
   filter(date >= '2017-01-01')
-  
+
 devtools::use_data(joe,
                    overwrite = TRUE)
 
@@ -58,7 +58,7 @@ names(frangos) <- tolower(names(frangos))
 frangos <- frangos %>%
   dplyr::select(diet,
                 chick,
-                time, 
+                time,
                 weight) %>%
   arrange(diet, chick, time)
 
@@ -85,7 +85,7 @@ devtools::use_data(af,
 
 # # Read fake census data (not reproducible)
 # census <- readr::read_csv('/home/joebrew/Documents/databrew.github.io/census.csv')
-# 
+#
 # devtools::use_data(census,
 #                    overwrite = TRUE)
 
@@ -109,7 +109,7 @@ devtools::use_data(af,
 #          sub_data$latitude,
 #          col = 'red')
 # }
-# 
+#
 # sub_data <-  joe %>%
 #   filter(date == '2017-02-27',
 #          time <= '2017-02-27 15:00:00')

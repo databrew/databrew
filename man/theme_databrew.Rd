@@ -25,4 +25,3 @@ A list of options compatible with \code{ggplot()}
 \description{
 Apply the databrew look to a ggplot2-generated visualization
 }
-

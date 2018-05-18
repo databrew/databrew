@@ -12,4 +12,3 @@ prepare_for_word_cloud(x)
 \description{
 Prepare a character vector for use with wordcloud2
 }
-

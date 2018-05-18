@@ -16,4 +16,3 @@ Nothing, but packages will be installed
 \description{
 Install some subjectively useful packages
 }
-

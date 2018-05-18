@@ -29,7 +29,10 @@ g <- ggplot(data = df,
   geom_point(size = 15) +
   theme_databrew() +
   theme(legend.position = 'none')
+g
 ```
+
+![](README-unnamed-chunk-2-1.png)
 
 Color palettes
 --------------

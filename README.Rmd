@@ -39,6 +39,7 @@ g <- ggplot(data = df,
   geom_point(size = 15) +
   theme_databrew() +
   theme(legend.position = 'none')
+g
 ```
 
 ## Color palettes

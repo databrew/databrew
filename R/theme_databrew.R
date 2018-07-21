@@ -22,8 +22,8 @@ theme_databrew <-
             y_comma = TRUE,
             subtitle_family = 'Sawasdee',
             axis_family = 'Sawasdee'){
-    
-    
+
+
     color_background = '#F8F5E1'#grey(0.99)
     color_grid_major = 'grey'
     color_axis_text =  "#0d63c4"
@@ -32,7 +32,7 @@ theme_databrew <-
     color_title = color_axis_text
     color_subtitle = grey(0.1)
     base_size1 = base_size
-    out <- 
+    out <-
       theme_bw(base_size = base_size1) +
       theme(panel.background = element_rect(fill = color_background,
                                             color = color_background)) +
@@ -51,12 +51,12 @@ theme_databrew <-
                                        color = color_axis_title)) +
       theme(plot.title = element_text(family = base_family,
                                       color = color_title,
-                                      size = base_size * 1.2, 
+                                      size = base_size * 1.2,
                                       # hjust = 4,
                                       vjust = 1.25)) +
       theme(plot.subtitle = element_text(family = subtitle_family,
                                          color = color_subtitle,
-                                         size = base_size * 0.8, 
+                                         size = base_size * 0.8,
                                          # hjust = -0.95,
                                          vjust = 1.25)) +
       theme(axis.text.x = element_text(family = axis_family,
@@ -73,13 +73,16 @@ theme_databrew <-
                                         size = base_size * 0.9, color = color_axis_title, vjust = 1.25)) +
       theme(plot.margin = unit(c(0.35, 0.2, 0.3, 0.35), "cm")) +
       theme(complete = TRUE) +
-      theme(legend.key = element_blank()) +
+      # theme(legend.key = element_blank()) +
+      theme(legend.title  = element_text(family = axis_family,
+                                      size = base_size * 0.7,
+                                      color = color_axis_text)) +
       theme(legend.position = 'bottom') +
       theme(strip.background = element_rect(fill=color_background),
             strip.text = element_text(size = base_size * 0.6),
             panel.spacing = unit(0, "lines"),
             panel.border = element_rect(colour = NA, fill=NA, size=0))
-    
+
     # Commas on continous y axes
     if(y_comma){
       out <-

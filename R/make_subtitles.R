@@ -36,7 +36,7 @@ make_subtitles <- function(text = '',
 }
 
 # text <- readr::read_csv('/home/joebrew/Videos/ramir/test.csv')
-# text <- text$en 
+# text <- text$en
 # start_times <- seq(4, (4*length(text)), by = 4)
 # end_times <- start_times + 4
 # 
@@ -48,7 +48,7 @@ make_subtitles <- function(text = '',
 # 
 # 
 # text <- readr::read_csv('/home/joebrew/Videos/ramir/test.csv')
-# text <- text$ca 
+# text <- text$ca
 # start_times <- seq(4, (4*length(text)), by = 4)
 # end_times <- start_times + 4
 # 

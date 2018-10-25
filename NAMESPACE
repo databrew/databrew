@@ -2,6 +2,7 @@
 
 export(install_packages)
 export(make_colors)
+export(make_subtitles)
 export(prepare_for_word_cloud)
 export(prettify)
 export(score_sentiment)

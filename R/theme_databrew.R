@@ -24,7 +24,7 @@ theme_databrew <-
             axis_family = 'Sawasdee'){
 
 
-    color_background = '#F8F5E1'#grey(0.99)
+    color_background = 'white'#  '#FFFFFF'#  '#F8F5E1'#grey(0.99)
     color_grid_major = 'grey'
     color_axis_text =  "#0d63c4"
     color_axis_title = color_axis_text
@@ -75,13 +75,16 @@ theme_databrew <-
       theme(complete = TRUE) +
       # theme(legend.key = element_blank()) +
       theme(legend.title  = element_text(family = axis_family,
-                                      size = base_size * 0.7,
+                                      size = base_size ,
                                       color = color_axis_text)) +
       theme(legend.position = 'bottom') +
-      theme(strip.background = element_rect(fill=color_background),
-            strip.text = element_text(size = base_size * 0.6),
+      theme(strip.background = element_rect(color = NA, fill = NA),
+            strip.text = element_text(size = base_size * 0.9,
+                                      family = base_family),
             panel.spacing = unit(0, "lines"),
-            panel.border = element_rect(colour = NA, fill=NA, size=0))
+            panel.border = element_rect(colour = NA, fill=NA, size=0),
+            plot.caption = element_text(size = base_size * 0.7,
+                                        family = base_family))
 
     # Commas on continous y axes
     if(y_comma){

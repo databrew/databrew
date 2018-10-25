@@ -4,8 +4,9 @@
 \alias{theme_databrew}
 \title{databrew theme}
 \usage{
-theme_databrew(base_size = 15, base_family = "Sawasdee", y_comma = TRUE,
-  subtitle_family = "Sawasdee", axis_family = "Sawasdee")
+theme_databrew(base_size = 15, base_family = "Sawasdee",
+  y_comma = TRUE, subtitle_family = "Sawasdee",
+  axis_family = "Sawasdee")
 }
 \arguments{
 \item{base_size}{The size of the base font}

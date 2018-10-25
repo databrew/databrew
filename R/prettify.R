@@ -59,9 +59,9 @@ prettify <- function(the_table,
       the_column <- format(the_column, format = date_format)
     } else if(the_class %in% c('numeric', 'integer')){
       the_column <- round(the_column, digits = round_digits)
-      if(comma_numbers){
-        the_column <- scales::comma(the_column)
-      }
+      # if(comma_numbers){
+      #   left <- scales::comma(the_column)
+      # }
     }
     the_table[,j] <- the_column
   }

@@ -6,7 +6,6 @@
 #' @param b2g Whether to use a blue to green palette (as opposed to blue to white);
 #' only applicable if categorical is FALSE
 #' @param r2g Whether to use a red to green palette (as opposed to blue to white); only applicable if categorical is FALSE
-#' @import RColorBrewer
 #' @export
 
 make_colors <- function(n = 3, categorical = TRUE, b2g = FALSE, r2g = FALSE){

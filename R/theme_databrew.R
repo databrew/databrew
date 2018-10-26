@@ -14,6 +14,7 @@
 #' @importFrom grid unit
 #' @importFrom extrafont loadfonts
 #' @importFrom scales comma
+#' @import RColorBrewer
 #' @export
 
 theme_databrew <-

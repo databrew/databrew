@@ -35,7 +35,11 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
+$if(titlebox)$
+\colorbox{black}{\textcolor{white}{$title$}}
+$else$
 \title{$title$}
+$endif$
 
 $for(author)$
 \author[$author.affiliation$]{$author.name$}

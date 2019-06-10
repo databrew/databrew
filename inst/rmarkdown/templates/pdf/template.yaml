@@ -1,0 +1,4 @@
+name: DataBrew two-column report template
+description: >
+  A two-column pdf template derived from pinp
+create_dir: false

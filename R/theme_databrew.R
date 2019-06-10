@@ -24,7 +24,7 @@ theme_databrew <-
             axis_family = 'Sawasdee'){
 
 
-    color_background = 'white'#  '#FFFFFF'#  '#F8F5E1'#grey(0.99)
+    color_background = '#ecf0f5' #'white'#  '#FFFFFF'#  '#F8F5E1'#grey(0.99)
     color_grid_major = 'grey'
     color_axis_text =  "#0d63c4"
     color_axis_title = color_axis_text

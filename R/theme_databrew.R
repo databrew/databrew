@@ -46,6 +46,8 @@ theme_databrew <-
       theme(panel.grid.minor = element_blank()) +
       theme(axis.ticks = element_blank()) +
       theme(legend.background = element_rect(fill = color_background)) +
+      theme(legend.key = element_rect(fill = color_background)) +
+      
       theme(legend.text = element_text(family = base_family,
                                        size = base_size * 0.7,
                                        color = color_axis_title)) +

@@ -4,8 +4,12 @@
 \alias{make_subtitles}
 \title{Make subtitles}
 \usage{
-make_subtitles(text = "", start_times = 0, end_times = NULL,
-  file = "subtitles.srt")
+make_subtitles(
+  text = "",
+  start_times = 0,
+  end_times = NULL,
+  file = "subtitles.srt"
+)
 }
 \description{
 Generate a srt file

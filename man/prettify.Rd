@@ -4,11 +4,20 @@
 \alias{prettify}
 \title{Prettify a table for HTML documents}
 \usage{
-prettify(the_table, remove_underscores_columns = TRUE,
-  cap_columns = TRUE, cap_characters = TRUE, comma_numbers = TRUE,
-  date_format = "\%B \%d, \%Y", round_digits = 2,
-  remove_row_names = TRUE, remove_line_breaks = TRUE,
-  data_table = TRUE, nrows = 5, download_options = FALSE)
+prettify(
+  the_table,
+  remove_underscores_columns = TRUE,
+  cap_columns = TRUE,
+  cap_characters = TRUE,
+  comma_numbers = TRUE,
+  date_format = "\%B \%d, \%Y",
+  round_digits = 2,
+  remove_row_names = TRUE,
+  remove_line_breaks = TRUE,
+  data_table = TRUE,
+  nrows = 5,
+  download_options = FALSE
+)
 }
 \arguments{
 \item{the_table}{The dataframe to be prettified}

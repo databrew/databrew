@@ -4,8 +4,7 @@
 \alias{pinp}
 \title{PNAS-alike two-column journal format.}
 \usage{
-pinp(..., keep_tex = TRUE, citation_package = "natbib",
-  collapse = FALSE)
+pinp(..., keep_tex = TRUE, citation_package = "natbib", collapse = FALSE)
 }
 \arguments{
 \item{...}{Additional arguments to \code{rmarkdown::pdf_document}}
